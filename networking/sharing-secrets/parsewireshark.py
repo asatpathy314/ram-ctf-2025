@@ -1,7 +1,7 @@
 import json
 import binascii
 from base64 import b64decode
-
+# secret_evil_stuff 
 def fix_padding(b64_string):
     missing_padding = len(b64_string) % 4
     if missing_padding:
@@ -27,6 +27,6 @@ for packet in packets:
     b64_str = byte_data.decode('utf-8')
     # Fix padding and decode
     b64data.append(b64_str)
-
+print(b64data[-1])
 with open("test.png", "wb") as f:
     f.write(b64decode(''.join(b64data)))
